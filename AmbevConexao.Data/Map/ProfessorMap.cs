@@ -21,7 +21,8 @@ namespace AmbevConexao.Data.Map
                .IsRequired();
 
             builder.Property(x => x.Banco)
-               .HasColumnType("varchar(50)");
+               .HasColumnType("varchar(50)")
+               .IsRequired(false);
 
             builder.Property(x => x.Agencia)
                .HasColumnType("varchar(10)");

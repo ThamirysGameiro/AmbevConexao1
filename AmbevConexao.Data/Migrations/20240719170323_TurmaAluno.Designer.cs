@@ -3,6 +3,7 @@ using AmbevConexao.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AmbevConexao.Data.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20240719170323_TurmaAluno")]
+    partial class TurmaAluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,12 +53,15 @@ namespace AmbevConexao.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Agencia")
+                        .IsRequired()
                         .HasColumnType("varchar(10)");
 
                     b.Property<string>("Banco")
+                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Conta")
+                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("Email")

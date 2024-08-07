@@ -2,17 +2,17 @@
 
 namespace AmbevConexao.Domain.Model
 {
-    public class Professor
+    public class Professor : IEntity
     {
-        public int Id { get; set; }
+        public int Id { get; set; }        
+
         public string Nome { get; private set; }
         public string Email { get; private set; }
         public Turno Turno { get; private set; }
-        public string Banco { get; private set; }
-        public string Agencia { get; private set; }
-        public string Conta { get; private set; }
-        public List<Turma> Turmas { get; set; } = new List<Turma>();
-
+        public string? Banco { get; private set; }
+        public string? Agencia { get; private set; }
+        public string? Conta { get; private set; }
+        public List<Turma> Turmas { get; set; } = new List<Turma>();        
 
         public static Professor NovoProfessor(string nome, string email, Turno turno)
         {
